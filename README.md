@@ -43,7 +43,7 @@ Feel free to test the features with the provided login credentials.
 | `API_HASH`               | string  | 79fbc802b7af4a896b88db7197858cc9         | Your Telegram API Hash                                               |
 | `BOT_TOKENS`             | string  | 7153149465:AAH6U5fS6OP_Mrz4u_4PMIcsFg8HtnPLXKM | List of Telegram bot tokens for file operations, separated by commas |
 | `STORAGE_CHANNEL`        | integer | -1002172378143             | Chat ID of the Telegram storage channel                              |
-| `DATABASE_BACKUP_MSG_ID` | integer | 123                       | Message ID of a file in the storage channel for database backups     |
+| `DATABASE_BACKUP_MSG_ID` | integer | 37                       | Message ID of a file in the storage channel for database backups     |
 
 > Note: All bots mentioned in the `BOT_TOKENS` variable must be added as admins in your `STORAGE_CHANNEL`.
 
