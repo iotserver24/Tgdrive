@@ -1,3 +1,4 @@
+// Function to show directory contents
 function showDirectory(data) {
     data = data['contents']
     document.getElementById('directory-data').innerHTML = ''
@@ -58,6 +59,7 @@ function showDirectory(data) {
     });
 }
 
+// Search form event listener
 document.getElementById('search-form').addEventListener('submit', async (event) => {
     event.preventDefault();
     const query = document.getElementById('file-search').value;
@@ -72,7 +74,6 @@ document.getElementById('search-form').addEventListener('submit', async (event) 
 });
 
 // Loading Main Page
-
 document.addEventListener('DOMContentLoaded', function () {
     const inputs = ['new-folder-name', 'rename-name', 'file-search']
     for (let i = 0; i < inputs.length; i++) {
@@ -92,4 +93,30 @@ document.addEventListener('DOMContentLoaded', function () {
             getCurrentDirectory()
         }
     }
+});
+
+// New button event listener
+document.getElementById('new-button').addEventListener('click', () => {
+    const newUpload = document.getElementById('new-upload');
+    newUpload.style.zIndex = newUpload.style.zIndex === '1' ? '-1' : '1';
+    newUpload.style.opacity = newUpload.style.opacity === '1' ? '0' : '1';
+});
+
+// Sidebar toggle event listeners
+document.getElementById('open-sidebar').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.add('open');
+    document.getElementById('bg-blur').style.zIndex = '1';
+    document.getElementById('bg-blur').style.opacity = '0.5';
+});
+
+document.getElementById('close-sidebar').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.getElementById('bg-blur').style.zIndex = '-1';
+    document.getElementById('bg-blur').style.opacity = '0';
+});
+
+document.getElementById('bg-blur').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.getElementById('bg-blur').style.zIndex = '-1';
+    document.getElementById('bg-blur').style.opacity = '0';
 });
